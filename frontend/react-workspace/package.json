@@ -5,6 +5,9 @@
   "scripts": {},
   "private": true,
   "dependencies": {
+    "@sentry/babel-plugin-component-annotate": "^2.16.1",
+    "@sentry/react": "^7.113.0",
+    "@sentry/webpack-plugin": "^2.16.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "6.11.2",

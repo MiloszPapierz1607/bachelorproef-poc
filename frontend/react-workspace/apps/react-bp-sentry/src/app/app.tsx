@@ -1,33 +1,44 @@
-import { Route, Routes, Link, useNavigate } from 'react-router-dom';
+import {
+  Route,
+  Routes,
+  Link,
+  useNavigate,
+  BrowserRouter,
+} from 'react-router-dom';
 import { ComponentSentry } from '@react-bp/component-sentry';
 import { HomeSentry } from '@react-bp/home-sentry';
 import { Button } from '@react-bp/shared/ui-buttons';
+import * as Sentry from '@sentry/react';
+
+const SentryRoutes = Sentry.withSentryReactRouterV6Routing(Routes);
 
 export function App() {
   return (
-    <Routes>
-      <Route index element={<Root />} />
-      <Route
-        path="/sentry"
-        element={
-          <PageWithNavbar>
-            <SentryApp />
-          </PageWithNavbar>
-        }
-      />
-      <Route
-        path="/sentry/component"
-        element={
-          <PageWithNavbar>
-            <ComponentSentry />
-          </PageWithNavbar>
-        }
-      />
-    </Routes>
+    <BrowserRouter>
+      <SentryRoutes>
+        <Route index element={<Root />} />
+        <Route
+          path="/sentry"
+          element={
+            <PageWithNavbar>
+              <SentryApp />
+            </PageWithNavbar>
+          }
+        />
+        <Route
+          path="/sentry/component"
+          element={
+            <PageWithNavbar>
+              <ComponentSentry />
+            </PageWithNavbar>
+          }
+        />
+      </SentryRoutes>
+    </BrowserRouter>
   );
 }
 
-export default App;
+export default Sentry.withProfiler(App);
 
 const Navbar = () => {
   return (

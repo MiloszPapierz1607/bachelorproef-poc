@@ -9,21 +9,29 @@ export function HomeSentry() {
 
   const fetch200 = async () => {
     const response = await axios.get<number>(
-      'http://localhost:8080/api/counts'
+      'http://localhost:8080/api/counts',
+      {
+        withCredentials: true,
+      }
     );
     setCountDate(response.data);
   };
 
   const fetch200Delay = async () => {
     const response = await axios.get<number>(
-      'http://localhost:8080/api/counts/delay'
+      'http://localhost:8080/api/counts/delay',
+      {
+        withCredentials: true,
+      }
     );
     setCountDate(response.data);
   };
 
   const fetch400 = async () => {
     try {
-      await axios.get<number>('http://localhost:8080/api/counts/clienterror');
+      await axios.get<number>('http://localhost:8080/api/counts/clienterror', {
+        withCredentials: true,
+      });
     } catch (e) {
       const error = e as any; // Explicitly cast 'e' to 'any'
       setServer400error(error.response?.data);

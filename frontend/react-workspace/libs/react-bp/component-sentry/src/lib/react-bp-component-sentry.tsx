@@ -14,7 +14,11 @@ export function ComponentSentry() {
   }, []);
 
   return (
-    <div className="w-full h-screen gap-x-3 flex justify-center items-center">
+    <div
+      data-sentry-component="ComponentSentry"
+      data-sentry-source-file="react-bp-component-sentry.jsx"
+      className="w-full h-screen gap-x-3 flex justify-center items-center"
+    >
       {shouldRender ? (
         <>
           <Button variant="blue">Send custom log</Button>

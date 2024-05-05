@@ -7,5 +7,5 @@
       }
     ]
   ],
-  "plugins": []
+  "plugins": ["@sentry/babel-plugin-component-annotate"]
 }
