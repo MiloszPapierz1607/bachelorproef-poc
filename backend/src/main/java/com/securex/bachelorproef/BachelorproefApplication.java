@@ -18,7 +18,12 @@ public class BachelorproefApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedMethods("*");
+				registry.addMapping("/**")
+						.allowedOrigins("http://localhost:4200")  // Adjust the origin to your Angular application URL
+						.allowedMethods("GET", "POST", "PUT", "DELETE")
+						.allowedHeaders("*")
+						.allowCredentials(true);
+
 			}
 		};
 	}

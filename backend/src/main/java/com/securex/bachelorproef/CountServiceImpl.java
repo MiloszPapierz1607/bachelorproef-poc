@@ -1,6 +1,7 @@
 package com.securex.bachelorproef;
 
 import org.springframework.stereotype.Service;
+import io.sentry.Sentry;
 
 @Service
 public class CountServiceImpl implements CountService {
@@ -8,6 +9,11 @@ public class CountServiceImpl implements CountService {
 
     @Override
     public int getCounts() {
+        try {
+            throw new Exception("This is a test.");
+        } catch (Exception e) {
+            Sentry.captureException(e);
+        }
         count++;
         return count;
     }
