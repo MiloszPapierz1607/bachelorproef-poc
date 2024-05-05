@@ -1,0 +1,26 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@react-bp/component-sentry": [
+        "libs/react-bp/component-sentry/src/index.ts"
+      ],
+      "@react-bp/home-sentry": ["libs/react-bp/home-sentry/src/index.ts"],
+      "@react-bp/shared/ui-buttons": ["libs/shared/ui-buttons/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
