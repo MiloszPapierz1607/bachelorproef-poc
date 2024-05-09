@@ -18,6 +18,7 @@
       "@react-bp/component-sentry": [
         "libs/react-bp/component-sentry/src/index.ts"
       ],
+      "@react-bp/home-elastic": ["libs/react-bp/home-elastic/src/index.ts"],
       "@react-bp/home-sentry": ["libs/react-bp/home-sentry/src/index.ts"],
       "@react-bp/shared/ui-buttons": ["libs/shared/ui-buttons/src/index.ts"]
     }

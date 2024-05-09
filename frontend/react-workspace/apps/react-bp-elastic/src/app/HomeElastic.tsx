@@ -1,20 +1,30 @@
 import { Button } from '@react-bp/shared/ui-buttons';
 import axios from 'axios';
 import { useState } from 'react';
-import * as Sentry from '@sentry/react';
+import apm from './rum';
 
-export function HomeSentry() {
+export function HomeElastic() {
   const [countData, setCountDate] = useState(0);
   const [server400error, setServer400error] = useState('');
   const [server500error, setServer500error] = useState('');
 
   const fetch200 = async () => {
+    const transaction = apm.startTransaction('fetch counts', 'http-request');
+
+    const httpSpan = transaction?.startSpan('GET counts', 'external.http');
+
+    for (let i = 0; i < 10000000; i++) {
+      const e = i + 2;
+    }
+
     const response = await axios.get<number>(
       'http://localhost:8080/api/counts',
       {
         withCredentials: true,
       }
     );
+    httpSpan?.end();
+    transaction?.end();
     setCountDate(response.data);
   };
 
@@ -54,7 +64,7 @@ export function HomeSentry() {
         <Button
           variant="blue"
           onClick={(e) => {
-            setCountDate(countData + 1);
+            fetch200();
           }}
         >
           HTTP 200
@@ -98,4 +108,4 @@ export function HomeSentry() {
   );
 }
 
-export default Sentry.withProfiler(HomeSentry);
+export default HomeElastic;

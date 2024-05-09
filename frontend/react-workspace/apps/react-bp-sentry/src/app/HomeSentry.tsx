@@ -54,7 +54,7 @@ export function HomeSentry() {
         <Button
           variant="blue"
           onClick={(e) => {
-            setCountDate(countData + 1);
+            fetch200();
           }}
         >
           HTTP 200

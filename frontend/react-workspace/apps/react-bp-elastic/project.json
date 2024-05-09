@@ -1,0 +1,9 @@
+{
+  "name": "react-bp-elastic",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/react-bp-elastic/src",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project react-bp-elastic --web",
+  "targets": {}
+}

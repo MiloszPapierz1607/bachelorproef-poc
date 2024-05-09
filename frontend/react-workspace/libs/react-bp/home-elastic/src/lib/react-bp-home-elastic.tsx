@@ -1,9 +1,8 @@
 import { Button } from '@react-bp/shared/ui-buttons';
 import axios from 'axios';
 import { useState } from 'react';
-import * as Sentry from '@sentry/react';
 
-export function HomeSentry() {
+export function HomeElastic() {
   const [countData, setCountDate] = useState(0);
   const [server400error, setServer400error] = useState('');
   const [server500error, setServer500error] = useState('');
@@ -54,7 +53,7 @@ export function HomeSentry() {
         <Button
           variant="blue"
           onClick={(e) => {
-            setCountDate(countData + 1);
+            fetch200();
           }}
         >
           HTTP 200
@@ -98,4 +97,4 @@ export function HomeSentry() {
   );
 }
 
-export default Sentry.withProfiler(HomeSentry);
+export default HomeElastic;

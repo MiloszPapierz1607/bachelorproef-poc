@@ -1,0 +1,9 @@
+{
+  "name": "react-bp-home-elastic",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/react-bp/home-elastic/src",
+  "projectType": "library",
+  "tags": ["type:feature", "scope:react-bp-elastic"],
+  "// targets": "to see all targets run: nx show project react-bp-home-elastic --web",
+  "targets": {}
+}

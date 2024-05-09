@@ -3,7 +3,7 @@ import { Button } from '@react-bp/shared/ui-buttons';
 import { ClipLoader } from 'react-spinners';
 import * as Sentry from '@sentry/react';
 
-export function ComponentSentry() {
+function ComponentSentry() {
   const [shouldRender, setShouldRender] = useState(false);
 
   useEffect(() => {
@@ -21,11 +21,11 @@ export function ComponentSentry() {
           <Button
             variant="blue"
             onClick={() => {
-              /*Sentry.getCurrentScope().setTransactionName(
+              Sentry.getCurrentScope().setTransactionName(
                 'Button click transaction'
               );
 
-              Sentry.captureMessage('This is a test log', 'log');*/
+              Sentry.addBreadcrumb({ message: 'This is ', level: 'log' });
             }}
           >
             Send custom log
@@ -46,4 +46,4 @@ export function ComponentSentry() {
   );
 }
 
-export default ComponentSentry;
+export default Sentry.withProfiler(ComponentSentry);

@@ -12,6 +12,7 @@ interface Test {
 export const Button = forwardRef<HTMLButtonElement, Props>(
   ({ variant = 'blue', children, ...htmlButtonProps }, ref) => (
     <button
+      data-transaction-name="my custom button name"
       {...htmlButtonProps}
       className={`btn-primary p-2 focus:ring-2 jutify-center ${
         variant === 'blue' ? 'bg-blue-500' : 'bg-red-500'
