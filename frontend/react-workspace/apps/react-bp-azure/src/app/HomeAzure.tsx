@@ -1,12 +1,13 @@
+import { useAppInsightsContext } from '@microsoft/applicationinsights-react-js';
 import { Button } from '@react-bp/shared/ui-buttons';
 import axios from 'axios';
 import { useState } from 'react';
-import apm from './rum';
 
-export function HomeElastic() {
+export function HomeAzure() {
   const [countData, setCountDate] = useState(0);
   const [server400error, setServer400error] = useState('');
   const [server500error, setServer500error] = useState('');
+  const appInsights = useAppInsightsContext();
 
   const fetch200 = async () => {
     const response = await axios.get<number>(
@@ -15,7 +16,6 @@ export function HomeElastic() {
         withCredentials: true,
       }
     );
-
     setCountDate(response.data);
   };
 
@@ -46,6 +46,7 @@ export function HomeElastic() {
     } catch (e) {
       const error = e as any; // Explicitly cast 'e' to 'any'
       setServer500error(error.response?.data);
+      appInsights.trackException({ exception: error });
     }
   };
 
@@ -99,4 +100,4 @@ export function HomeElastic() {
   );
 }
 
-export default HomeElastic;
+export default HomeAzure;

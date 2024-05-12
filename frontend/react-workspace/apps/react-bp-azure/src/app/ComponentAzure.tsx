@@ -1,21 +1,22 @@
-import { apm } from '@elastic/apm-rum';
 import { Button } from '@react-bp/shared/ui-buttons';
+import { useAppInsightsContext } from '@microsoft/applicationinsights-react-js';
 
-function ComponentElastic() {
+function ComponentAzure() {
+  const appInsights = useAppInsightsContext();
   return (
     <div className="w-full h-screen gap-x-3 flex justify-center items-center">
       <Button
         variant="blue"
         onClick={(e) => {
-          const transaction = apm.startTransaction(
-            'my test transaction',
-            'custom',
+          appInsights.trackTrace(
             {
-              managed: true,
+              message: 'This is a test trace',
+              severityLevel: 1,
+            },
+            {
+              customPropertyKey: 'customPropertyValue',
             }
           );
-
-          transaction?.end();
         }}
       >
         Send custom log
@@ -23,11 +24,7 @@ function ComponentElastic() {
       <Button
         variant="red"
         onClick={(e) => {
-          try {
-            throw Error();
-          } catch (error) {
-            apm.captureError(error as Error);
-          }
+          throw new Error();
         }}
       >
         Throw Error
@@ -36,4 +33,4 @@ function ComponentElastic() {
   );
 }
 
-export default ComponentElastic;
+export default ComponentAzure;

@@ -7,6 +7,8 @@ const apm = initApm({
   environment: 'my-environment',
   distributedTracingOrigins: ['http://localhost:4200', 'http://localhost:8080'],
   logLevel: 'debug',
+  disableInstrumentations: ['click'],
+  breakdownMetrics: true,
 });
 
 export default apm;

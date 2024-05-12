@@ -1,31 +1,31 @@
-import { Route, Link, Routes, BrowserRouter } from 'react-router-dom';
-//@ts-expect-error kkk
-import { ApmRoutes, withTransaction } from '@elastic/apm-rum-react';
-import ComponenElastic from './ComponenElastic';
-import HomeElastic from './HomeElastic';
+import { AppInsightsContext } from '@microsoft/applicationinsights-react-js';
+import { Route, Routes, Link } from 'react-router-dom';
+import { reactPlugin } from './ApplicationInsightsService';
+import ComponentAzure from './ComponentAzure';
+import HomeAzure from './HomeAzure';
 
 export function App() {
   return (
-    <BrowserRouter>
+    <AppInsightsContext.Provider value={reactPlugin}>
       <Routes>
         <Route
           index
           element={
             <PageWithNavbar>
-              <HomeElastic />
+              <HomeAzure />
             </PageWithNavbar>
           }
         />
         <Route
-          path="/elastic/component"
+          path="/azure/component"
           element={
             <PageWithNavbar>
-              <ComponenElastic />
+              <ComponentAzure />
             </PageWithNavbar>
           }
         />
       </Routes>
-    </BrowserRouter>
+    </AppInsightsContext.Provider>
   );
 }
 
@@ -38,7 +38,7 @@ const Navbar = () => {
         <Link to="/" className="font-bold text-lg">
           Home
         </Link>
-        <Link to="/elastic/component" className="font-bold text-lg">
+        <Link to="/azure/component" className="font-bold text-lg">
           Component
         </Link>
       </div>
