@@ -5,7 +5,7 @@ import App from './app/app';
 import reportWebVitals from './reportWebVitals';
 import apm from './app/rum';
 
-apm.setInitialPageLoadName('Booting elastic bp application');
+apm.init();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

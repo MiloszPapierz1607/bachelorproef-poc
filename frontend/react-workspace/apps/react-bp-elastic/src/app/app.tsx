@@ -1,13 +1,13 @@
-import { Route, Link, Routes, BrowserRouter } from 'react-router-dom';
-//@ts-expect-error kkk
-import { ApmRoutes, withTransaction } from '@elastic/apm-rum-react';
+import { Route, Link, BrowserRouter } from 'react-router-dom';
+
+import { ApmRoutes } from '@elastic/apm-rum-react';
 import ComponenElastic from './ComponenElastic';
 import HomeElastic from './HomeElastic';
 
 export function App() {
   return (
     <BrowserRouter>
-      <Routes>
+      <ApmRoutes>
         <Route
           index
           element={
@@ -24,7 +24,7 @@ export function App() {
             </PageWithNavbar>
           }
         />
-      </Routes>
+      </ApmRoutes>
     </BrowserRouter>
   );
 }

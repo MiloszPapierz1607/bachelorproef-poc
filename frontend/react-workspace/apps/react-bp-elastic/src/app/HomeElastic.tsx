@@ -1,7 +1,6 @@
 import { Button } from '@react-bp/shared/ui-buttons';
 import axios from 'axios';
 import { useState } from 'react';
-import apm from './rum';
 
 export function HomeElastic() {
   const [countData, setCountDate] = useState(0);

@@ -1,0 +1,31 @@
+2024-05-14 19:12:15.214+02:00 ERROR c.m.applicationinsights.agent - 
+*************************
+Application Insights Java Agent 3.5.2 startup failed (PID 30944)
+*************************
+
+Description:
+No connection string provided
+
+Action:
+Please provide connection string.
+
+2024-05-14 19:16:19.099+02:00 ERROR c.m.applicationinsights.agent - 
+*************************
+Application Insights Java Agent 3.5.2 startup failed (PID 19724)
+*************************
+
+Description:
+No connection string provided
+
+Action:
+Please provide connection string.
+
+2024-05-14 19:28:31.884+02:00 WARN  c.a.c.h.netty.implementation.Utility - The following Netty dependencies have versions that do not match the versions specified in the azure-core-http-netty pom.xml file. This may result in unexpected behavior. If your application runs without issue this message can be ignored, otherwise please update the Netty dependencies to match the versions specified in the pom.xml file. Versions found in runtime: 'io.netty:netty-common' version not found (expected: 4.1.101.Final),'io.netty:netty-handler' version not found (expected: 4.1.101.Final),'io.netty:netty-handler-proxy' version not found (expected: 4.1.101.Final),'io.netty:netty-buffer' version not found (expected: 4.1.101.Final),'io.netty:netty-codec' version not found (expected: 4.1.101.Final),'io.netty:netty-codec-http' version not found (expected: 4.1.101.Final),'io.netty:netty-codec-http2' version not found (expected: 4.1.101.Final)
+2024-05-14 19:28:34.219+02:00 INFO  c.m.applicationinsights.agent - Application Insights Java Agent 3.5.2 started successfully (PID 18584, JVM running for 4.238 s)
+2024-05-14 19:28:34.227+02:00 INFO  c.m.applicationinsights.agent - Java version: 21.0.2, vendor: Amazon.com Inc., home: C:\Users\milos\.jdks\corretto-21.0.2
+2024-05-14 19:54:12.636+02:00 WARN  c.a.c.h.netty.implementation.Utility - The following Netty dependencies have versions that do not match the versions specified in the azure-core-http-netty pom.xml file. This may result in unexpected behavior. If your application runs without issue this message can be ignored, otherwise please update the Netty dependencies to match the versions specified in the pom.xml file. Versions found in runtime: 'io.netty:netty-common' version not found (expected: 4.1.101.Final),'io.netty:netty-handler' version not found (expected: 4.1.101.Final),'io.netty:netty-handler-proxy' version not found (expected: 4.1.101.Final),'io.netty:netty-buffer' version not found (expected: 4.1.101.Final),'io.netty:netty-codec' version not found (expected: 4.1.101.Final),'io.netty:netty-codec-http' version not found (expected: 4.1.101.Final),'io.netty:netty-codec-http2' version not found (expected: 4.1.101.Final)
+2024-05-14 19:54:14.976+02:00 INFO  c.m.applicationinsights.agent - Application Insights Java Agent 3.5.2 started successfully (PID 1540, JVM running for 4.787 s)
+2024-05-14 19:54:14.985+02:00 INFO  c.m.applicationinsights.agent - Java version: 21.0.2, vendor: Amazon.com Inc., home: C:\Users\milos\.jdks\corretto-21.0.2
+2024-05-14 19:55:30.180+02:00 WARN  c.a.c.h.netty.implementation.Utility - The following Netty dependencies have versions that do not match the versions specified in the azure-core-http-netty pom.xml file. This may result in unexpected behavior. If your application runs without issue this message can be ignored, otherwise please update the Netty dependencies to match the versions specified in the pom.xml file. Versions found in runtime: 'io.netty:netty-common' version not found (expected: 4.1.101.Final),'io.netty:netty-handler' version not found (expected: 4.1.101.Final),'io.netty:netty-handler-proxy' version not found (expected: 4.1.101.Final),'io.netty:netty-buffer' version not found (expected: 4.1.101.Final),'io.netty:netty-codec' version not found (expected: 4.1.101.Final),'io.netty:netty-codec-http' version not found (expected: 4.1.101.Final),'io.netty:netty-codec-http2' version not found (expected: 4.1.101.Final)
+2024-05-14 19:55:32.333+02:00 INFO  c.m.applicationinsights.agent - Application Insights Java Agent 3.5.2 started successfully (PID 25428, JVM running for 3.636 s)
+2024-05-14 19:55:32.341+02:00 INFO  c.m.applicationinsights.agent - Java version: 21.0.2, vendor: Amazon.com Inc., home: C:\Users\milos\.jdks\corretto-21.0.2
